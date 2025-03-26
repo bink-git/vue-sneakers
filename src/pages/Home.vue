@@ -1,6 +1,6 @@
 <script setup>
-import Card from '../components/Card.vue';
-import Header from '../components/Header.vue';
+import CardList from '../components/CardList.vue'
+import Header from '../components/Header.vue'
 </script>
 
 <template>
@@ -8,21 +8,21 @@ import Header from '../components/Header.vue';
     <Header />
 
     <div class="p-10">
-      <div class="flex justify-between items-center mb-10">
-        <h1 class="text-3xl font-bold">Все кроссовки</h1>
+      <div class="flex flex-col xl:flex-row xl:justify-between xl:items-center mb-10 gap-4">
+        <h1 class="text-3xl font-bold">All sneakers</h1>
         <div class="flex items-center gap-4">
           <select
             class="py-2 px-3 border border-gray-200 focus:border-gray-400 rounded-md focus:outline-none"
           >
-            <option value="name">По названию</option>
-            <option value="price">По цене (дешевые)</option>
-            <option value="price">По цене (дорогие)</option>
+            <option value="name">By name</option>
+            <option value="price">By price (low)</option>
+            <option value="price">By price (high)</option>
           </select>
           <div class="relative">
             <input
               type="text"
               class="border border-gray-200 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:border-gray-400"
-              placeholder="Поиск..."
+              placeholder="Search..."
             />
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <img src="/search.svg" />
@@ -31,13 +31,7 @@ import Header from '../components/Header.vue';
         </div>
       </div>
 
-      <div class="grid grid-cols-4 gap-10">
-        <Card
-          title="Мужские Кроссовки Nike Blazer Mid Suede"
-          price="1000"
-          img="/sneakers/sneakers-1.jpg"
-        />
-      </div>
+      <CardList />
     </div>
   </div>
 </template>
