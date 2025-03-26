@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 defineProps({
   title: String,
-  img: String,
+  imageUrl: String,
   price: Number,
   isFavorite: Boolean,
   isAdded: Boolean,
@@ -26,7 +26,7 @@ defineProps({
       <img :src="!isFavorite ? '/like-1.svg' : '/like-2.svg'" alt="Favorite" />
     </div>
 
-    <img :src="img" class="w-full" alt="Sneaker" />
+    <img :src="imageUrl" class="w-full" alt="Sneaker" />
 
     <p>{{ title }}</p>
 
